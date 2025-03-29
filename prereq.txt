@@ -1,0 +1,22 @@
+# Essential packages
+sudo apt update && sudo apt install python3-pip python3-venv \
+portaudio19-dev libatlas3-base espeak ffmpeg
+
+# Python requirements
+python3 -m venv venv
+source venv/bin/activate
+pip install face-recognition==1.3.0 opencv-python-headless==4.7.0.72 \
+speechrecognition==3.10.0 sounddevice==0.4.6 ollama==0.1.0
+
+wget https://github.com/rhasspy/piper/releases/download/v1.1.0/piper_arm64.tar.gz
+tar xvf piper_arm64.tar.gz
+sudo mv piper /usr/local/bin/
+wget https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/ryan/medium/en_US-ryan-medium.onnx
+
+curl -fsSL https://ollama.com/install.sh | sh
+sudo systemctl start ollama
+ollama pull tinyllama
+
+cd ~/blind_assist
+source venv/bin/activate
+sudo nice -n 10 python main.py  # Run with lower CPU priority
