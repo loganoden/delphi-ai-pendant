@@ -7,7 +7,7 @@
 ---
 
 ## 📘 Overview
-**DELPHI** is a wearable AI pendant prototype designed to assist visually impaired users by detecting faces and audibly identifying recognized individuals in real time — completely **on-device**.  
+**DELPHI** is a wearable AI pendant prototype designed to assist visually impaired users by detecting faces and audibly identifying recognized individuals in real time, completely **on-device**.  
 Developed in just **24 hours** during *MakeOHI/O 2025*, the project integrates multiple edge computing systems and lightweight AI models to deliver private, low-latency recognition and communication without cloud dependence.
 
 ---
